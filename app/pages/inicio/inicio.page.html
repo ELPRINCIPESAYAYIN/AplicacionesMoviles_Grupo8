@@ -1,0 +1,117 @@
+<ion-header>
+
+  <ion-toolbar color="primary">
+ 
+   <ion-title #titulo class="front-size-19">
+ 
+    Sistema Asistencia DUOC
+ 
+   </ion-title>
+ 
+  </ion-toolbar>
+ 
+ </ion-header>
+ 
+ 
+ 
+ <ion-content [fullscreen]="true" class="ion-padding-horizontal page" #page>
+ 
+  <h1>¡Bienvenido(a) {{ usuario.nombre }}!</h1>
+ 
+ </ion-content>
+ 
+ 
+ 
+ <ion-content class="ion-padding-horizontal">
+ 
+  <ion-title>
+ 
+   <h1>¡Bienvenido(a)</h1>
+ 
+   <h4>Mis datos personales</h4>
+ 
+  </ion-title>
+ 
+ 
+ 
+  <ion-item>
+ 
+   <ion-label position="floating">Cuenta</ion-label>
+ 
+   <ion-input [(ngModel)]="usuario.cuenta"></ion-input>
+ 
+  </ion-item>
+ 
+ 
+ 
+  <ion-item>
+ 
+   <ion-label position="floating">Nombre</ion-label>
+ 
+   <ion-input [(ngModel)]="usuario.nombre"></ion-input>
+ 
+  </ion-item>
+ 
+ 
+ 
+  <ion-item>
+ 
+   <ion-label position="floating">Apellido</ion-label>
+ 
+   <ion-input [(ngModel)]="usuario.apellido"></ion-input>
+ 
+  </ion-item>
+ 
+ 
+ 
+  <ion-item>
+ 
+   <ion-label position="floating">Educación</ion-label>
+ 
+   <ion-select [(ngModel)]="usuario.nivelEducacional.id">
+ 
+    <ion-select-option *ngFor="let nivel of listaNivelesEducacionales" [value]="nivel.id">
+ 
+     {{ nivel.nombre }}
+ 
+    </ion-select-option>
+ 
+   </ion-select>
+ 
+  </ion-item>
+ 
+ 
+ 
+  <ion-item>
+ 
+   <ion-label position="floating">Fecha de Nacimiento</ion-label>
+ 
+   <ion-datetime [(ngModel)]="usuario.fechaNacimiento" display-format="DD/MM/YYYY"></ion-datetime>
+ 
+  </ion-item>
+ 
+ 
+ 
+  <ion-grid>
+ 
+   <ion-row>
+ 
+    <ion-col size="6">
+ 
+     <ion-button expand="full" shape="round" (click)="limpiar1()">Limpiar 1</ion-button>
+ 
+    </ion-col>
+ 
+    <ion-col size="6">
+ 
+     <ion-button expand="full" shape="round" (click)="limpiar2()">Limpiar 2</ion-button>
+ 
+    </ion-col>
+ 
+   </ion-row>
+ 
+  </ion-grid>
+ 
+ </ion-content>
+ 
+ 

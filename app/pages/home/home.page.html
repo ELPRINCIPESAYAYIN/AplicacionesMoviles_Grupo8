@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title #titulo class="ion-text-left ion-text">
+      <div>
+        Asistencia DUOC
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+  <ion-title class="ion-padding-top">
+    <ion-label>
+      <h1 class="ion-text-center">¡Bienvenido(a) {{ usuario.nombre }} {{ usuario.apellido }}!</h1>
+    </ion-label>
+  </ion-title>
+  <b class="ion-text-center">
+    <h4>Información Adicional</h4>
+  </b>
+
+  <ion-item #itemCuenta>
+    <ion-input label="Cuenta" labelPlacement="floating" type="text" 
+      [(ngModel)]="usuario.cuenta"></ion-input>
+  </ion-item>
+
+  <ion-item #itemNombre>
+    <ion-input label="Nombre" labelPlacement="floating" type="text" 
+      [(ngModel)]="usuario.nombre"></ion-input>
+  </ion-item>
+
+  <ion-item #itemApellido>
+    <ion-input label="Apellido" labelPlacement="floating" type="text" 
+      [(ngModel)]="usuario.apellido"></ion-input>
+  </ion-item>
+
+  <ion-item #itemEducacion>
+    <!-- <ion-label position="floating">Educación</ion-label> -->
+    <ion-select position="floating" label="Educación" placeholder="Seleccione nivel" 
+        [(ngModel)]="usuario.nivelEducacional!.id">
+      <ion-select-option *ngFor="let nivelEducacional of listaNivelesEducacionales" 
+        [value]="nivelEducacional.id">
+          {{nivelEducacional.nombre}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item #itemFechaNacimiento>
+    <!-- CGV: A continuación se configura el MatDatePicker para la fecha de nacimiento 
+      nótese que para que se vea el botón del calendario, se tuvo que modificar el 
+      archivo scss
+    -->
+    <table>
+      <tr>
+        <td class="font-size-12">
+          Nacimiento
+        </td>
+        <td class="cell-align-right">
+          <input 
+            matInput 
+            [matDatepicker]="fechaNacimiento" 
+            [(ngModel)]="usuario.fechaNacimiento"
+            placeholder="dd/mm/yyyy"
+            class="date-width">
+        </td>
+        <td class="cell-width-0">
+          <mat-datepicker-toggle matSuffix [for]="fechaNacimiento"></mat-datepicker-toggle>
+          <mat-datepicker #fechaNacimiento></mat-datepicker>
+        </td>
+      </tr>
+    </table>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-button shape="block" (click)="limpiarFormulario()">
+          Limpiar
+        </ion-button>
+      </ion-col>
+      <ion-col col-6>
+        <ion-button shape="block" (click)="mostrarDatosPersona()">
+          Mostrar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-left ion-text">
+      App desarrollada por Cristián Gómez Vega
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
