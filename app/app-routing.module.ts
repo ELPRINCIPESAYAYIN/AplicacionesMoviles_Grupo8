@@ -15,6 +15,15 @@ const routes: Routes = [
     path: 'inicio',
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
+  
+  {
+    path: 'fallido',
+    loadChildren: () => import('./pages/fallido/fallido.module').then( m => m.FallidoPageModule)
+  },
+  {
+    path: 'acierto',
+    loadChildren: () => import('./pages/acierto/acierto.module').then( m => m.AciertoPageModule)
+  },
 ];
 
 @NgModule({

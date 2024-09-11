@@ -17,9 +17,10 @@ export class LoginPage implements OnInit {
   constructor(private router: Router, private toastController: ToastController) {
     this.usuario = new Usuario('', '', '', '', '', '', '', 
       NivelEducacional.findNivelEducacionalById(1)!, undefined);
-    this.usuario.cuenta = 'atorres';
+    this.usuario.cuenta = 'jesusgf';
     this.usuario.password = '1234';
   }
+  
  
 ////////////7
   public ngOnInit(): void {

@@ -52,6 +52,7 @@ export class InicioPage implements OnInit, AfterViewInit {
 
 
  public listaNivelesEducacionales = NivelEducacional.getNivelesEducacionales();
+expanded: any;
 
 
 
@@ -133,17 +134,31 @@ export class InicioPage implements OnInit, AfterViewInit {
 
   if (this.itemCuenta && this.itemNombre && this.itemApellido && this.itemFechaNacimiento) {
 
-   this.animateItem1(this.itemCuenta.nativeElement, 1000);
+   this.animateItem1(this.itemCuenta.nativeElement, 10010);
 
-   this.animateItem1(this.itemNombre.nativeElement, 1000);
+   this.animateItem1(this.itemNombre.nativeElement, 20010);
 
-   this.animateItem1(this.itemApellido.nativeElement, 1000);
+   this.animateItem1(this.itemApellido.nativeElement, 30100);
 
-   this.animateItem1(this.itemFechaNacimiento.nativeElement, 1000);
+   this.animateItem1(this.itemFechaNacimiento.nativeElement, 40010);
 
   }
 
  }
+ public agregar(): void 
+ {
+
+  this.usuario.cuenta = '';
+
+  this.usuario.nombre = '';
+
+  this.usuario.apellido = '';
+
+  this.usuario.nivelEducacional = NivelEducacional.findNivelEducacionalById(1)!
+
+  this.usuario.fechaNacimiento = undefined;
+
+}
 
 
 

@@ -105,24 +105,24 @@ export class Usuario extends Persona {
         new Date(2000, 0, 1)
       ),
       new Usuario(
-        'jperez',
+        'jesusgf',
         'jperez@duocuc.cl',
-        '5678',
+        '1234',
         '¿Cuál es tu postre favorito?',
         'panqueques',
-        'Juan',
-        'Pérez',
+        'jesus',
+        'gonzalez',
         NivelEducacional.findNivelEducacionalById(5)!,
-        new Date(2000, 1, 1)
+        new Date(2004, 1, 23)
       ),
       new Usuario(
-        'cmujica',
-        'cmujica@duocuc.cl',
-        '0987',
+        'cristo',
+        'cristoRedentor@duocuc.cl',
+        '1234',
         '¿Cuál es tu vehículo favorito?',
         'moto',
-        'Carla',
-        'Mujica',
+        'cristian',
+        'ruiz',
         NivelEducacional.findNivelEducacionalById(6)!,
         new Date(2000, 2, 1)
       ),

@@ -80,17 +80,25 @@
  
   </ion-item>
  
+
  
- 
+
   <ion-item>
- 
-   <ion-label position="floating">Fecha de Nacimiento</ion-label>
- 
-   <ion-datetime [(ngModel)]="usuario.fechaNacimiento" display-format="DD/MM/YYYY"></ion-datetime>
- 
+    <ion-label position="floating">Fecha de Nacimiento</ion-label>
+    <br>
+
+    <!-- Campo de entrada (matInput) -->
+    <input (click)="fechaNacimiento.open()"style="position: relative;"
+           matInput placeholder="dd/mm/yyyy" 
+           [matDatepicker]="fechaNacimiento" 
+           [(ngModel)]="usuario.fechaNacimiento" 
+           style="width: calc(30% - 0);"> <!-- Ajusta el ancho del input para dejar espacio al toggle -->
+
+    <!-- Toggle del selector de fecha alineado al nivel del label -->
+    <mat-datepicker-toggle matSuffix [for]="fechaNacimiento" style="position: absolute; right: 0; top: 10px;"></mat-datepicker-toggle>
+
+    <mat-datepicker #fechaNacimiento></mat-datepicker>
   </ion-item>
- 
- 
  
   <ion-grid>
  
