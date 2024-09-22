@@ -1,0 +1,79 @@
+<ion-content [fullscreen]="true">
+  <div class="centrar">
+    <div class="enmarcar-login">
+      <ion-card class="ion-text-center">
+        
+        <img alt="DUOC" src="../../../assets/img/pao.jpg" class="foto-portada" />
+      
+        <ion-card-content>
+
+          <ion-card-header>
+            <ion-toolbar>
+              <h1>Sistema de Asistencia DUOC</h1>
+              <h2>Inicio de sesión</h2>
+            </ion-toolbar>
+          </ion-card-header>
+
+          <ion-item>
+            <ion-input [(ngModel)]="usuario.cuenta" 
+                label="Cuenta" labelPlacement="floating"
+                placeholder="Ej: atorres"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input [(ngModel)]="usuario.password" 
+                label="Contraseña" labelPlacement="floating" type="password"
+                placeholder="Ej: 1234"></ion-input>
+          </ion-item>
+
+          <div class="ion-margin-top">
+            <ion-button shape="round" size="small" (click)="ingresar()" class="ancho-boton">
+              Ingresar
+            </ion-button>
+            <br>
+            
+
+            <br>
+            <ion-button shape="square" size="medium" (click)="correo()" class="ancho-boton">
+             cambia tu contraseña
+            </ion-button>
+            <br>
+            <br><br>
+            
+
+          </div>
+            
+        </ion-card-content>
+
+      </ion-card>
+
+    </div>
+  </div>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar color="primary" class="ion-text-center">
+    
+    <ion-button shape="round" size="small" color="tertiary"
+        (click)="navegar('/inicio')">
+      <ion-icon slot="start" name="home"></ion-icon>
+      Inicio
+    </ion-button>
+
+    <ion-button shape="round" size="small" color="tertiary"
+        (click)="navegar('/leerqr')"
+        [disabled]="usuario.cuenta.trim() === ''">
+      <ion-icon slot="start" name="qr-code"></ion-icon>
+      Asistencia
+    </ion-button>
+
+    <ion-button shape="round" size="small" color="tertiary"
+        (click)="navegar('/login')">
+      <ion-icon slot="start" name="log-out"></ion-icon>
+      Salir
+    </ion-button>
+
+  </ion-toolbar>
+</ion-footer>
+

@@ -1,0 +1,175 @@
+  <ion-header>
+
+  <ion-toolbar color="">
+ 
+   <ion-title #titulo class="front-size-1500">
+    <img src="../../../assets/img/logo.png" alt="" style="height: 15px; vertical-align: middle; margin-right: 10px;">
+
+    Sistema Asistencia DUOC
+ 
+   </ion-title>
+ 
+  </ion-toolbar>
+  
+
+
+</ion-header>
+ 
+ <!-- <ion-content [fullscreen]="true" class="ion-padding-horizontal page" #page>
+ 
+  <h1>¡Bienvenido(a) {{ usuario.nombre }}!</h1>
+ 
+ </ion-content> -->
+
+ <ion-content class="ion-padding-horizontal">
+ 
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="primary" style="justify-content: center; width: 100%;">
+        <!-- Botón Lector QR -->
+        <ion-button (click)="navigateToqrreader()" style="flex-direction: column; align-items: center;">
+          <ion-icon name="aperture" size="large"></ion-icon>
+          <ion-label style="font-size: 14px; margin-top: 4px;">Lector QR</ion-label>
+        </ion-button>
+  
+        <!-- Botón Mi Clase -->
+        <ion-button (click)="navigateTomiclase()" style="flex-direction: column; align-items: center;">
+          <ion-icon name="folder-open" size="large"></ion-icon>
+          <ion-label style="font-size: 14px; margin-top: 4px;">Mi Clase</ion-label>
+        </ion-button>
+  
+        <!-- Botón Mis Datos -->
+        <ion-button (click)="navigateTomisdatos()" style="flex-direction: column; align-items: center;">
+          <ion-icon name="person-circle" size="large"></ion-icon>
+          <ion-label style="font-size: 14px; margin-top: 4px;">Mis Datos</ion-label>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+ 
+<br>
+<h1 class="ion-text-center">Mis Datos Personales</h1>
+ 
+ 
+  <ion-item>
+   <ion-label position="floating">Cuenta</ion-label>
+   <ion-input [(ngModel)]="usuario.cuenta"></ion-input>
+  </ion-item>
+
+  <ion-item>
+   <ion-label position="floating">Nombre</ion-label>
+   <ion-input [(ngModel)]="usuario.nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+   <ion-label position="floating">Apellido</ion-label>
+   <ion-input [(ngModel)]="usuario.apellido"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Correo</ion-label>
+    <ion-input [(ngModel)]="usuario.correo"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Pregunta Secreta</ion-label>
+    <ion-input [(ngModel)]="usuario.preguntaSecreta"></ion-input>  
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Respuesta Secreta</ion-label>  
+    <ion-input [(ngModel)]="usuario.respuestaSecreta"></ion-input>  
+  </ion-item>
+
+  <ion-item>
+   <ion-label position="floating">Educación</ion-label>
+   <ion-select [(ngModel)]="usuario.nivelEducacional.id">
+    <ion-select-option *ngFor="let nivel of listaNivelesEducacionales" [value]="nivel.id">
+ 
+     {{ nivel.nombre }}
+ 
+    </ion-select-option>
+ 
+   </ion-select>
+ 
+  </ion-item>
+ 
+
+ 
+
+  <ion-item>
+    <ion-label position="floating">Fecha de Nacimiento</ion-label>
+    <br>
+
+    <!-- Campo de entrada (matInput) -->
+    <ion-item>
+      <ion-label position="floating">Fecha de Nacimiento</ion-label>
+      <ion-datetime
+        displayFormat="DD/MM/YYYY"
+        [(ngModel)]="usuario.fechaNacimiento">
+      </ion-datetime>
+    </ion-item>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Cambiar Contraseña</ion-label>
+    <ion-input [(ngModel)]="usuario.password" type="password" ></ion-input>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="full" shape="round" (click)="limpiar()">Limpiar 1</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="full" shape="round" (click)="actualizarDatosUsuario()">Actualizar Datos</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="full" shape="round" (click)="cerrarSesion()">Cerrar Sesion</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ 
+ </ion-content>
+ 
+
+<ion-footer>
+  <ion-toolbar color="primary" class="ion-text-center">
+    
+    <ion-button shape="round" size="small" color="tertiary"
+        (click)="navegar('/inicio')">
+      <ion-icon slot="start" name="home"></ion-icon>
+      Inicio
+    </ion-button>
+
+    <ion-button shape="round" size="small" color="tertiary"
+        (click)="navegar('/leerqr')"
+        [disabled]="usuario.cuenta.trim() === ''">
+      <ion-icon slot="start" name="qr-code"></ion-icon>
+      Asistencia
+    </ion-button>
+
+    <ion-button shape="round" size="small" color="tertiary"
+        (click)="navegar('/login')">
+      <ion-icon slot="start" name="log-out"></ion-icon>
+      Salir
+    </ion-button>
+    <ion-button shape="round" size="small" color="tertiary"
+        (click)="navegar('/miclase')">
+      <ion-icon slot="start" name="log-out"></ion-icon>
+      mi clase
+    </ion-button>
+    <ion-button shape="round" size="small" color="tertiary"
+        (click)="navegar('/misdatos')">
+      <ion-icon slot="start" name="log-out"></ion-icon>
+      mis datos
+    </ion-button>
+
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>miclase</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">miclase</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar color="primary" class="ion-text-center">
+    
+    <ion-button shape="round" size="small" color="tertiary"
+        (click)="navegar('/inicio')">
+      <ion-icon slot="start" name="home"></ion-icon>
+      Inicio
+    </ion-button>
+
+    <ion-button shape="round" size="small" color="tertiary"
+        (click)="navegar('/leerqr')"
+        [disabled]="usuario.cuenta.trim() === ''">
+      <ion-icon slot="start" name="qr-code"></ion-icon>
+      Asistencia
+    </ion-button>
+
+    <ion-button shape="round" size="small" color="tertiary"
+        (click)="navegar('/login')">
+      <ion-icon slot="start" name="log-out"></ion-icon>
+      Salir
+    </ion-button>
+    <ion-button shape="round" size="small" color="tertiary"
+        (click)="navegar('/miclase')">
+      <ion-icon slot="start" name="log-out"></ion-icon>
+      mi clase
+    </ion-button>
+    <ion-button shape="round" size="small" color="tertiary"
+        (click)="navegar('/misdatos')">
+      <ion-icon slot="start" name="log-out"></ion-icon>
+      mis datos
+    </ion-button>
+
+  </ion-toolbar>
+</ion-footer>
