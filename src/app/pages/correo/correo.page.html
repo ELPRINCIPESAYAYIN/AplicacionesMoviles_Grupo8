@@ -1,0 +1,22 @@
+<ion-content [fullscreen]="true">
+  <ion-content class="card-content-container">
+    <ion-card>
+      <img src="assets/images/logo.png" alt="Logo_duoc" class="logo">
+      <ion-card-header>
+        <ion-card-subtitle class="text-center">Recuperar Contraseña</ion-card-subtitle>
+        <ion-card-title class="lato-bold" style="color: #fff;">Paso 1: Ingresar tu correo</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-input 
+          type="text" 
+          class="lato-bold" 
+          placeholder="ej: aamunozp@duocuc.cl"
+          (ionInput)="actualizarCorreo($event)"  
+          name="correo">
+        </ion-input>
+        <ion-button expand="full" class="custom-button" (click)="ingresarCorreo()">Recuperar contraseña</ion-button>
+        <p>¿Ya tienes una cuenta? <a href="/ingreso">Inicia sesión aquí</a>.</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-content>

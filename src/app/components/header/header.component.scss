@@ -1,0 +1,16 @@
+.glow-text {
+  color: #d5d5e4; /* Color azul oscuro */
+  text-shadow: 
+    0 0 10px rgba(26, 149, 231, 0.8), /* Resplandor azul más suave */
+    0 0 15px rgba(93, 173, 226, 0.5), /* Resplandor azul más difuso */
+    0 0 20px rgba(5, 27, 105, 0.236); /* Resplandor amarillo más sutil */
+}
+
+// <!-- <ion-row style="background-color: #FFCB05; color: #002654;"> -->
+.color {
+  color: #0f2330 !important;
+}
+
+ion-toolbar.institucional_color {
+  background-color: #0f2330 !important;
+}

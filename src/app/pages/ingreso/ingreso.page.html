@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar class="transparent-bg">
+    <div slot="start" class="ion-margin">
+      <app-language #selectLanguage></app-language>
+    </div> <img src="assets/images/logo.png" alt="Logo_duoc" class="logo" >
+     
+    <div slot="end" class="ion-margin">
+      <ion-button shape="round" size="small" (click)="navigateTheme()">
+        Tema
+        <ion-icon slot="start" name="color-wand-outline"></ion-icon>
+      </ion-button>
+    </div>
+   </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <img class="background-image" src="/assets/images/sede.jpg">
+  
+  <h1 class="glow-text show-in-portrait margin-top-6"> {{ 'AppName' | translate }} </h1>
+
+  <ion-card class="login-container transparent-input">
+
+    <ion-card-header class="show-in-portrait">
+      <ion-card-title color="light" class="glow-text">
+        <h4>
+          <b>
+            {{ 'Login.Title.Login' | translate }}
+          </b>
+        </h4>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="transparent-input text-center">
+      
+      <ion-item class="margin-bottom-6 float-left-landscape">
+        <ion-input 
+        id="correo"
+          label="{{ 'Login.Label.Email' | translate }}" 
+          labelPlacement="floating"
+          [(ngModel)]="user" 
+          placeholder="{{ 'Login.Placeholder.Email' | translate }}">
+        </ion-input>
+      </ion-item>
+
+      <ion-item class="margin-bottom-6 float-right-landscape">
+        <ion-input 
+        id="password"
+          label="{{ 'Login.Label.Password' | translate }}"
+          labelPlacement="floating"
+          [(ngModel)]="password" 
+          placeholder="{{ 'Login.Placeholder.Password' | translate }}"
+          type="password">
+        </ion-input>
+      </ion-item>
+
+      <div id="ingresar" class="ion-text-center margin-top-6" style="clear: both;">
+        <ion-button class="enter-button normal-text" shape="round" (click)="login()">
+          {{ 'Login.Button.Login' | translate }}
+        </ion-button>
+      </div>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-button color="primary" shape="block" (click)="navigateToRegistro()">
+    {{ 'HomePage.Button.Registro' | translate }}
+  </ion-button>
+  <ion-button color="primary" shape="block" (click)="navigateToCorreo()">
+    {{ 'HomePage.Button.pregunta' | translate }}
+  </ion-button>
+  <ion-button color="primary" shape="block" (click)="navigateToMap()">
+    {{ 'HomePage.Button.MiRuta' | translate }}
+  </ion-button>
+  
+</ion-footer>

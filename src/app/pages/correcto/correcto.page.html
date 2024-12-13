@@ -1,0 +1,15 @@
+
+
+<ion-content class="ion-text-center">
+  <ion-card>
+    <img src="assets/images/imagen_correcto.jpg" alt="Imagen Correcto" onerror="this.src='assets/icon/imagen_correcto.png';">
+    <ion-card-title style="color: #fff;">¡Respuesta Correcta!</ion-card-title>
+    
+    <ion-card-content>
+      <p>Tu clave ha sido recuperada con éxito</p>
+      <ion-card-subtitle>Tu contraseña es: {{ password || 'No disponible' }}</ion-card-subtitle>
+      <br>
+      <p><a href="/ingreso">Inicia sesión aquí</a></p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

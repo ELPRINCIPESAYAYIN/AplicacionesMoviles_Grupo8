@@ -1,0 +1,44 @@
+<app-header 
+  id="app-header"
+  (headerClick)="headerClick($event)">
+</app-header>
+
+<ion-content [fullscreen]="true">
+  <app-qrwebscanner 
+    id="qrwebscanner"
+    *ngIf="selectedComponent === 'qrwebscanner'" 
+    (scanned)="webQrScanned($event)"
+    (stopped)="webQrStopped()">
+  </app-qrwebscanner>
+  
+  <app-welcome 
+    id="welcome_title"
+    *ngIf="selectedComponent === 'welcome'">
+  </app-welcome>
+
+  <app-dinosaur 
+    id="dinosaur_component"
+    *ngIf="selectedComponent === 'dinosaur'">
+  </app-dinosaur>
+
+  <app-forum 
+    id="forum_component"
+    *ngIf="selectedComponent === 'forum'">
+  </app-forum>
+
+  <app-mis-datos 
+    id="mis-datos_component"
+    *ngIf="selectedComponent === 'mis-datos'">
+  </app-mis-datos>
+  
+  <ng-container 
+    id="usuarios_container"
+    *ngIf="selectedComponent === 'usuarios'">
+    <app-usuarios id="usuarios_component"></app-usuarios>
+  </ng-container>
+</ion-content>
+
+<app-footer
+  id="app-footer"
+  (footerClick)="footerClick($event)">
+</app-footer>

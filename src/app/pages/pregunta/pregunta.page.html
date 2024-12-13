@@ -1,0 +1,30 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <img src="assets/images/logo.png" alt="Logo_duoc" class="logo">
+      <ion-card-subtitle>Recuperar Contraseña</ion-card-subtitle>
+      <ion-card-subtitle>{{ user?.firstName }} {{ user?.lastName }}</ion-card-subtitle>
+      <ion-card-title style="color:#fff">Paso 2: Responde la pregunta secreta</ion-card-title>
+      <ion-card-subtitle>{{ user?.secretQuestion }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <!-- ion-input con referencia local -->
+      <ion-input
+        type="text"
+        placeholder="Escribe aquí tu respuesta"
+        #inputRespuesta
+      ></ion-input>
+
+      <!-- Llamada a la función sin usar 'String' -->
+      <ion-button
+        expand="block"
+        (click)="validarRespuestaSecreta(inputRespuesta.value ? inputRespuesta.value.toString() : null)"
+      >
+        Recuperar contraseña
+      </ion-button>
+
+      <p>¿Ya tienes una cuenta? <a href="/ingreso">Inicia sesión aquí</a>.</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

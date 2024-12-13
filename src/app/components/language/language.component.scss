@@ -1,0 +1,9 @@
+.color-black {
+  color: #ffffff; /* Cambia el color del texto a negro */
+}
+
+ion-select.color-black::part(placeholder),
+ion-select.color-black::part(text),
+ion-select-option {
+  color: #ffffff; /* Asegúrate de que el color del texto y del placeholder sea negro */
+}

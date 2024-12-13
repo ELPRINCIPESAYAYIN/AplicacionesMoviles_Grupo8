@@ -1,0 +1,39 @@
+<ion-footer>
+  <ion-toolbar class="institucional_color" style="padding-bottom: 4px; position: relative;">
+    <!-- Línea amarilla -->
+    <div class="linea-amarilla"></div>
+
+    <ion-segment 
+      [value]="selectedButton" 
+      (ionChange)="sendClickEvent($event)"
+      [(ngModel)]="selectedButton">
+      
+      <!-- Botones para el admin y usuarios -->
+      <ion-segment-button *ngIf="currentUser" value="forum" style="--color: white;">
+        <ion-icon name="people-outline"></ion-icon>
+        {{ "HomePage.Button.Forum" | translate }}
+      </ion-segment-button>
+      <ion-segment-button *ngIf="currentUser" id="misdatos" value="mis-datos" style="--color: white;">
+        <ion-icon name="pencil-outline"></ion-icon>
+        {{ "HomePage.Button.MisDatos" | translate }}
+      </ion-segment-button>
+
+      <!-- Botones adicionales solo para el admin -->
+      <ion-segment-button *ngIf="currentUser === 'admin'" value="usuarios" style="--color: white;">
+        <ion-icon name="people-outline"></ion-icon>
+        {{ "HomePage.Button.Usuarios" | translate }}
+      </ion-segment-button>
+
+      <!-- Botones adicionales solo para usuarios -->
+      <ion-segment-button *ngIf="currentUser !== 'admin'" value="dinosaur" style="--color: white;">
+        <ion-icon name="document-outline"></ion-icon>
+        {{ "HomePage.Button.MiClase" | translate }}
+      </ion-segment-button>
+      <ion-segment-button *ngIf="currentUser !== 'admin'" value="qrwebscanner" style="--color: white;">
+        <ion-icon name="qr-code-outline"></ion-icon>
+        {{ "HomePage.Button.Scan" | translate }}
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer>
+

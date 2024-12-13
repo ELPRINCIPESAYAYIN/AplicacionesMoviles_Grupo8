@@ -1,0 +1,30 @@
+::ng-deep ion-segment-button {
+  --color-checked: white; /* Color del texto e ícono cuando está activo */
+  --indicator-color: transparent; /* Elimina la barra indicadora azul debajo del botón activo */
+  --background-checked: transparent; /* Evita que el fondo se torne azul cuando esté activo */
+  position: relative;
+}
+
+::ng-deep ion-segment-button::after {
+  content: '';
+  position: absolute;
+  right: 0; /* Posiciona la línea al final del botón */
+  top: 50%; /* Centra la línea verticalmente */
+  transform: translateY(-50%);
+  height: 70%; /* Altura de la línea */
+  width: 2px; /* Grosor de la línea */
+  background-color: #FFCB05; /* Color de la línea */
+}
+
+::ng-deep ion-segment-button:last-child::after {
+  display: none; /* Quita la línea del último botón */
+}
+
+.linea-amarilla {
+  width: 100%;
+  height: 2px; /* Grosor de la línea */
+  background-color: #FFCB05; /* Color de la línea */
+  position: absolute;
+  top: 0; /* Coloca la línea en la parte superior del ion-toolbar */
+  left: 0;
+}

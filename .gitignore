@@ -12,7 +12,6 @@ $RECYCLE.BIN/
 *.log
 log.txt
 
-
 /.sourcemaps
 /.versions
 /coverage
@@ -52,7 +51,6 @@ yarn-error.log
 !.vscode/extensions.json
 .history/*
 
-
 # Miscellaneous
 /.angular
 /.angular/cache
@@ -68,3 +66,10 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Agregado explícitamente
+# Ignorar el directorio de pruebas e2e
+/e2e/
+
+# Ignorar los directorios de compilación de Ionic
+/.angular/

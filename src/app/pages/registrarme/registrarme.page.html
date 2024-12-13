@@ -1,0 +1,104 @@
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+
+
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="/assets/images/logo.png" alt="logo" class="logo">
+  </div>
+
+  <!-- Card de registro -->
+  <ion-card class="custom-card">
+    <ion-card-content>
+
+
+      <!-- Título -->
+      <h4 class="title-containers"> Registro de Cuenta </h4>
+
+      <!-- Campos de registro -->
+      <div class="input-container">
+        <!-- Nombre de usuario -->
+        <ion-item class="input-item">
+          <ion-label class="input-label"> Cuenta: </ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.userName" placeholder="  Ej: atorres"></ion-input>
+        </ion-item>
+
+        <!-- Nombres -->
+        <ion-item class="input-item">
+          <ion-label class="input-label"> Nombres:  </ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.firstName" placeholder="  Ej: Ana"></ion-input>
+        </ion-item>
+
+        <!-- Apellidos -->
+        <ion-item class="input-item">
+          <ion-label class="input-label"> Apellidos: </ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.lastName" placeholder=" Ej: Torres"></ion-input>
+        </ion-item>
+
+        <!-- Correo -->
+        <ion-item class="input-item">
+          <ion-label class="input-label"> Correo:  </ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.email" placeholder=" Ej: atorres@duocuc.cl"></ion-input>
+        </ion-item>
+
+        <!-- Direccion -->
+        <ion-item class="input-item">
+          <ion-label class="input-label"> Dirección:  </ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.address" placeholder=" Ej: Alameda #54"></ion-input>
+        </ion-item>
+        
+        <!-- Pregunta Secreta -->
+        <ion-item class="input-item">
+          <ion-label class="input-label"> Pregunta Secreta:  </ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.secretQuestion" placeholder=" Ej: ¿Cual es tu animal favorito?"></ion-input>
+        </ion-item>
+
+        <!-- Respuesta Secreta -->
+        <ion-item class="input-item">
+          <ion-label class="input-label"> Respuesta Secreta:  </ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.secretAnswer" placeholder=" Ej: gato"></ion-input>
+        </ion-item>
+
+        <!-- Nivel Educacional -->
+        <ion-item class="input-item">
+          <ion-label class="input-label"> Nivel Educacional:  </ion-label>
+          <ion-select placeholder="Seleccione nivel" [(ngModel)]="usuario.educationalLevel.id">
+            <ion-select-option *ngFor="let educationalLevel of listaNivelesEducacionales" [value]="educationalLevel.id">
+              {{ educationalLevel.name }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Fecha de Nacimiento usando input tipo date -->
+        <ion-item class="input-item">
+          <ion-label class="input-label"> Fecha Nacimiento: </ion-label>
+          <input style="text-align: right; border: 0px;" 
+            type="date"
+            [(ngModel)]="usuario.dateOfBirth">
+        </ion-item>
+
+        <!-- Contraseña -->
+        <ion-item class="input-item">
+          <ion-label class="input-label"> Contraseña: </ion-label>
+          <ion-input type="password" [(ngModel)]="usuario.password" placeholder="  Ej: 1234"></ion-input>
+        </ion-item>
+
+        <!-- Repetir Contraseña -->
+        <ion-item class="input-item">
+          <ion-label class="input-label"> Repetir Contraseña: </ion-label>
+          <ion-input type="password" [(ngModel)]="usuario.confirmPassword" placeholder="  Ej: 1234"></ion-input>
+        </ion-item>
+
+        <!-- Botón de Registro -->
+        <div class="ion-text-center margin-top-6">
+          <ion-button (click)="crearCuenta()" shape="round" size="small">
+            Crear Cuenta
+          </ion-button>
+
+          <ion-button (click)="navigateToLogin()" shape="round" size="small">
+           Volver al Login
+          </ion-button>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

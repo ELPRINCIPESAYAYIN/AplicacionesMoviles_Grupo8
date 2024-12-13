@@ -1,0 +1,74 @@
+<ion-content [fullscreen]="true">
+  <!-- Tarjeta (card) que contiene los campos del usuario -->
+  <ion-card>
+    <!-- Nombre completo del usuario -->
+    <div class="centered-content">
+      <h3 id="usuario_nombre_completo">{{ user.firstName }} {{ user.lastName }}</h3>
+    </div>
+
+    <!-- Campos de entrada dentro de la tarjeta -->
+    <ion-item>
+      <ion-label position="floating">{{ "MisDatos.form.Cuenta" | translate }}</ion-label>
+      <ion-input id="input_cuenta" [(ngModel)]="user.userName" aria-label="Cuenta de usuario"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">{{ "MisDatos.form.Correo" | translate }}</ion-label>
+      <ion-input id="correo" [(ngModel)]="user.email" aria-label="Correo electrónico"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" for="input_contraseña">{{ "MisDatos.form.Contraseña" | translate }}</ion-label>
+      <ion-input id="input_contraseña" [(ngModel)]="user.password" type="password" aria-label="Contraseña"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" for="input_pregunta">{{ "MisDatos.form.Pregunta.secreta" | translate }}</ion-label>
+      <ion-input id="input_pregunta" [(ngModel)]="user.secretQuestion" aria-label="Pregunta secreta"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" for="input_respuesta">{{ "MisDatos.form.Respuesta.secreta" | translate }}</ion-label>
+      <ion-input id="input_respuesta" [(ngModel)]="user.secretAnswer" aria-label="Respuesta secreta"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">{{ "MisDatos.form.Nombre" | translate }}</ion-label>
+      <ion-input id="input_nombre" [(ngModel)]="user.firstName" aria-label="Nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" for="input_apellido">{{ "MisDatos.form.Apellido" | translate }}</ion-label>
+      <ion-input id="input_apellido" [(ngModel)]="user.lastName" aria-label="Apellido"></ion-input>
+    </ion-item>
+
+    <ion-item class="font-size-12">
+      <ion-label position="stacked" for="input_educacion">{{ "MisDatos.form.Educación" | translate }}</ion-label>
+      <br>
+      <ion-select id="input_educacion" [(ngModel)]="user.educationalLevel.id"
+                  (ionChange)="actualizarNivelEducacional($event)" aria-label="Nivel educacional">
+        <ion-select-option *ngFor="let nivelEducacional of listaNivelesEducacionales"
+                           [value]="nivelEducacional.id">
+          {{ nivelEducacional.name }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked" for="input_fecha_nacimiento">{{ "Nacimiento" | translate }}</ion-label>
+      <ion-datetime id="input_fecha_nacimiento" display-format="DD/MM/YYYY" [(ngModel)]="user.dateOfBirth"
+                    (ionChange)="onFechaNacimientoChange($event)" size="small"
+                    aria-label="Fecha de nacimiento">
+        <ng-container *ngIf="user.dateOfBirth">{{ user.dateOfBirth | date: 'dd/MM/yyyy' }}</ng-container>
+      </ion-datetime>
+    </ion-item>
+
+    <!-- Botón dentro de la tarjeta -->
+    <div class="centered-content">
+      <ion-button id="boton_guardar" (click)="guardaruser()" expand="block" color="primary">
+        {{ "Guardar" | translate }}
+      </ion-button>
+    </div>
+  </ion-card>
+</ion-content>
+ 

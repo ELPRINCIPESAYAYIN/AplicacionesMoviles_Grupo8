@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <img src="../../../assets/img/logo.png" alt="Logo" style="height: 15px; vertical-align: middle; margin-right: 10px;">
+      Sistema Asistencia DUOC
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <!-- Botones de navegación en la parte superior de la tarjeta -->
+    <ion-toolbar>
+      <ion-buttons slot="primary" style="justify-content: center; width: 100%;">
+        <ion-button (click)="navigateToleerqr()" style="flex-direction: column; align-items: center;">
+          <ion-icon name="aperture" size="large"></ion-icon>
+          <ion-label style="font-size: 14px; margin-top: 4px;">Lector QR</ion-label>
+        </ion-button>
+
+        <ion-button (click)="navigateTomiclase()" style="flex-direction: column; align-items: center;">
+          <ion-icon name="folder-open" size="large"></ion-icon>
+          <ion-label style="font-size: 14px; margin-top: 4px;">Mi Clase</ion-label>
+        </ion-button>
+
+        <ion-button (click)="navigateTomisdatos()" style="flex-direction: column; align-items: center;">
+          <ion-icon name="person-circle" size="large"></ion-icon>
+          <ion-label style="font-size: 14px; margin-top: 4px;">Mis Datos</ion-label>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+
+    <!-- Título de la sección de datos de asignatura -->
+    <h2 style="color: #002654; text-align: center; margin-top: 20px;">Datos Asignatura</h2>
+
+    <!-- Tabla de datos de asignatura -->
+    <ion-grid>
+      <ion-row style="background-color: #FFCB05; color: #002654;">
+        <ion-col><strong>Campo</strong></ion-col>
+        <ion-col><strong>Valor</strong></ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>Bloque Inicio</ion-col>
+        <ion-col>{{ bloqueInicio }}</ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>Bloque Término</ion-col>
+        <ion-col>{{ bloqueTermino }}</ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>Día</ion-col>
+        <ion-col>{{ dia }}</ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>Hora Inicio</ion-col>
+        <ion-col>{{ horaInicio }}</ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>Hora Fin</ion-col>
+        <ion-col>{{ horaFin }}</ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>ID Asignatura</ion-col>
+        <ion-col>{{ idAsignatura }}</ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>Nombre Asignatura</ion-col>
+        <ion-col>{{ nombreAsignatura }}</ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>Nombre Profesor</ion-col>
+        <ion-col>{{ nombreProfesor }}</ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>Sección</ion-col>
+        <ion-col>{{ seccion }}</ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>Sede</ion-col>
+        <ion-col>{{ sede }}</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Botón para desconectar en la parte inferior de la tarjeta -->
+    <div class="centered-content">
+      <ion-button expand="block" color="warning" (click)="desconectar()" style="width: 100%; margin-top: 20px;">
+        Desconectar
+      </ion-button>
+    </div>
+  </ion-card>
+</ion-content>

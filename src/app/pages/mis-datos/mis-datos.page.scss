@@ -1,0 +1,17 @@
+.centered-content {
+  display: flex;
+  justify-content: center;  /* Centra el contenido horizontalmente */
+}
+
+h3 {
+  text-align: center;
+  color: #000;  /* Centra el texto dentro del h3 */
+}
+
+ion-card {
+  background-color: #fff;  /* Color de fondo blanco */
+  border-radius: 10px;      /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para la tarjeta */
+  margin: 10px;            /* Margen alrededor de la tarjeta */
+  padding: 20px;           /* Espaciado interno */
+}
